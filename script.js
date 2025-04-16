@@ -1,7 +1,7 @@
 // =======================
 // Dynamic Text Animation
 // =======================
-const words = ["coding", "gaming", "automation", "scripting", "efficiency", "innovation"];
+const words = ["coding", "gaming", "automation", "scripting", "playing", "innovation"];
 let index = 0;
 const changingText = document.getElementById("changing-text");
 
