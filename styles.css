@@ -1,0 +1,113 @@
+/* Import a sleek font */
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+/* Header styles */
+header h1 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+/* Changing text animation */
+#changing-text {
+  display: inline-block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Download button styling with glasmorphism */
+#download-button {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 50px;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+/* Glowing overlay effect */
+#download-button::before {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  right: -5%;
+  bottom: -5%;
+  border-radius: 50px;
+  background: linear-gradient(45deg, rgba(255, 0, 150, 0.4), rgba(0, 229, 255, 0.4));
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#download-button:hover::before {
+  opacity: 1;
+}
+
+#download-button:active {
+  transform: scale(0.95);
+}
+
+/* Button pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+}
+#download-button {
+  animation: pulse 2s infinite;
+}
+
+/* Special click ripple effect */
+.click-effect {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: click-effect-animation 0.6s ease-out forwards;
+}
+
+@keyframes click-effect-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
